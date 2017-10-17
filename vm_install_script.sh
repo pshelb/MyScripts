@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# To run this script:
-# chmod +x vm_install_script.sh
-# ./vm_install_script.sh
-
 # TODO
-# Install Java and IDE
+# Menu
+# Install IDE
 
 echo "Hello, $USER. Installing applications..."
 
@@ -23,6 +20,19 @@ echo "Installing Git."
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install git
+
+# Oracle JDK 8
+echo "Installing Oracle JDK."
+echo "Part A - Add the PPA."
+sudo add-apt-repository ppa:webupd8team/java
+echo "Part B - Update system package index."
+sudo apt update
+echo "Part C - Install Java installer script."
+sudo apt install oracle-java8-installer
+echo "Part D - Set environment variable (Requires a restart)."
+sudo apt install oracle-java8-set-default
+echo "Part E - Check version of Java."
+java -version
 
 # Sublime Text 3
 echo "Installing Sublime Text 3."
@@ -44,19 +54,6 @@ sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-get update
 sudo apt-get install code
-
-# Oracle JDK 8
-echo "Installing Oracle JDK."
-echo "Part A - Add the PPA."
-sudo add-apt-repository ppa:webupd8team/java
-echo "Part B - Update system package index."
-sudo apt update
-echo "Part C - Install Java installer script."
-sudo apt install oracle-java8-installer
-echo "Part D - Set environment variable (Requires a restart)."
-sudo apt install oracle-java8-set-default
-echo "Part E - Check version of Java."
-java -version
  
 # MANUAL INSTALLS
 
