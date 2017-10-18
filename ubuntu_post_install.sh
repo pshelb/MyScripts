@@ -6,11 +6,11 @@ echo "Hello, $USER. Installing applications..."
 sudo -v
 
 # Update
-echo "Updating the list of available updates."
+read -p "Updating the list of available updates. Press enter to continue."
 sudo apt-get update
 
 # Upgrade
-echo "Upgrading current packages."
+read -p "Upgrading current packages.. Press enter to continue."
 sudo apt-get upgrade
 
 # GIMP
@@ -36,6 +36,8 @@ then
         sudo dpkg -i google-chrome*.deb
         echo 'Google Chrome installed.'
     fi
+    # Clean up
+    rm -rf google-chrome*.deb
 fi
 
 # GParted
@@ -124,4 +126,4 @@ then
     sudo apt-get install code
 fi
 
-read -p "Finished. Press enter to continue."
+echo "Finished installing applications."
