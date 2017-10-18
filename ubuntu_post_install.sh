@@ -2,6 +2,10 @@
 
 echo "Hello, $USER. Installing applications..."
 
+# Clean up folders
+rm ~/examples.desktop
+mkdir ~/Development
+
 # Run as sudo from start
 sudo -v
 
