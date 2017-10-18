@@ -5,6 +5,14 @@ echo "Hello, $USER. Installing applications..."
 # Run as sudo from start
 sudo -v
 
+# Update
+echo "Updating the list of available updates."
+sudo apt-get update
+
+# Upgrade
+echo "Upgrading current packages."
+sudo apt-get upgrade
+
 # GIMP
 read -p "Install GIMP? (y/n) " -n 1 -r
 echo
@@ -12,6 +20,22 @@ if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing GIMP."
     sudo apt-get install gimp
+fi
+ 
+# Google Chrome
+read -p "Install Google Chrome? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Google Chrome."
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    if sudo dpkg -i google-chrome*.deb; then
+        echo 'Google Chrome installed.'
+    else
+        sudo apt-get install -f
+        sudo dpkg -i google-chrome*.deb
+        echo 'Google Chrome installed.'
+    fi
 fi
 
 # GParted
@@ -98,22 +122,6 @@ then
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
     sudo apt-get update
     sudo apt-get install code
-fi
- 
-# Google Chrome
-read -p "Install Google Chrome? (y/n) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]];
-then
-    echo "Installing Google Chrome."
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    if sudo dpkg -i google-chrome*.deb; then
-        echo 'Google Chrome installed.'
-    else
-        sudo apt-get install -f
-        sudo dpkg -i google-chrome*.deb
-        echo 'Google Chrome installed.'
-    fi
 fi
 
 read -p "Finished. Press enter to continue."
