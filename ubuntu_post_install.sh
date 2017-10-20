@@ -44,6 +44,15 @@ then
     rm -rf google-chrome*.deb
 fi
 
+# GNOME Tweak Tool
+read -p "Install GNOME Tweak Tool? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing GNOME Tweak Tool."
+    sudo apt-get install gnome-tweak-tool
+fi
+
 # GParted
 read -p "Install GParted? (y/n) " -n 1 -r
 echo
@@ -51,6 +60,15 @@ if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing GParted."
     sudo apt-get install gparted
+fi
+
+# Meld
+read -p "Install Meld? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Meld."
+    sudo apt-get install meld
 fi
 
 # VLC
