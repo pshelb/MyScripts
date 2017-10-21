@@ -11,11 +11,11 @@ sudo -v
 
 # Update
 read -p "Updating the list of available updates. Press enter to continue."
-sudo apt-get update
+sudo apt-get -y update
 
 # Upgrade
 read -p "Upgrading current packages.. Press enter to continue."
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 
 # GIMP
 read -p "Install GIMP? (y/n) " -n 1 -r
@@ -23,7 +23,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing GIMP."
-    sudo apt-get install gimp
+    sudo apt-get -y install gimp
 fi
  
 # Google Chrome
@@ -36,7 +36,7 @@ then
     if sudo dpkg -i google-chrome*.deb; then
         echo 'Google Chrome installed.'
     else
-        sudo apt-get install -f
+        sudo apt-get -y install -f
         sudo dpkg -i google-chrome*.deb
         echo 'Google Chrome installed.'
     fi
@@ -50,7 +50,26 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing GNOME Tweak Tool."
-    sudo apt-get install gnome-tweak-tool
+    sudo apt-get -y install gnome-tweak-tool
+fi
+
+# Arc Theme
+read -p "Install Arc Theme? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Arc Theme."
+    sudo apt-get -y install arc-theme
+fi
+
+# Papirus Icons
+read -p "Install Papirus Icons? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Papirus Icons."
+    sudo add-apt-repository ppa:papirus/papirus
+    sudo apt update && sudo apt-get -y install papirus-icon-theme
 fi
 
 # GParted
@@ -59,7 +78,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing GParted."
-    sudo apt-get install gparted
+    sudo apt-get -y install gparted
 fi
 
 # Meld
@@ -68,7 +87,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing Meld."
-    sudo apt-get install meld
+    sudo apt-get -y install meld
 fi
 
 # VLC
@@ -77,7 +96,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing VLC."
-    sudo apt-get install vlc
+    sudo apt-get -y install vlc
 fi
 
 # Ubuntu Restricted Extras
@@ -86,7 +105,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing Ubuntu Restricted Extras."
-    sudo apt-get install ubuntu-restricted-extras
+    sudo apt-get -y install ubuntu-restricted-extras
 fi
 
 # Git
@@ -97,7 +116,7 @@ then
     echo "Installing Git."
     sudo add-apt-repository ppa:git-core/ppa
     sudo apt update
-    sudo apt install git
+    sudo apt -y install git
 fi
 
 # Oracle JDK 8
@@ -111,9 +130,9 @@ then
     echo "Part B - Update system package index."
     sudo apt update
     echo "Part C - Install Java installer script."
-    sudo apt install oracle-java8-installer
+    sudo apt -y install oracle-java8-installer
     echo "Part D - Set environment variable (Requires a restart)."
-    sudo apt install oracle-java8-set-default
+    sudo apt -y install oracle-java8-set-default
     echo "Part E - Check version of Java."
     java -version
 fi
@@ -127,12 +146,12 @@ then
     echo "Part A - Install the GPG key."
     sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
     echo "Part B - Ensure apt is set up to work with https sources."
-    sudo apt-get install apt-transport-https
+    sudo apt-get -y install apt-transport-https
     echo "Part C - Elect the channel to use."
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
     echo "Part D - Update apt sources and install Sublime Text."
     sudo apt-get update
-    sudo apt-get install sublime-text
+    sudo apt-get -y install sublime-text
 fi
 
 # Visual Studio Code
@@ -145,7 +164,7 @@ then
     sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
     sudo apt-get update
-    sudo apt-get install code
+    sudo apt-get -y install code
 fi
 
 echo "Finished installing applications."
