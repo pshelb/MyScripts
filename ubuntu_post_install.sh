@@ -25,6 +25,15 @@ then
     echo "Installing GIMP."
     sudo apt-get -y install gimp
 fi
+
+# Inkscape
+read -p "Install Inkscape? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Inkscape."
+    sudo apt-get -y install inkscape
+fi
  
 # Google Chrome
 read -p "Install Google Chrome? (y/n) " -n 1 -r
