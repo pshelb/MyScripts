@@ -18,7 +18,7 @@ read -p "Upgrading current packages.. Press enter to continue."
 sudo apt-get -y upgrade
 
 # GIMP
-read -p "Install GIMP? (y/n) " -n 1 -r
+read -p "Install GIMP? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -27,7 +27,7 @@ then
 fi
 
 # Inkscape
-read -p "Install Inkscape? (y/n) " -n 1 -r
+read -p "Install Inkscape? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -36,7 +36,7 @@ then
 fi
  
 # Google Chrome
-read -p "Install Google Chrome? (y/n) " -n 1 -r
+read -p "Install Google Chrome? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -54,7 +54,7 @@ then
 fi
 
 # GNOME Tweak Tool
-read -p "Install GNOME Tweak Tool? (y/n) " -n 1 -r
+read -p "Install GNOME Tweak Tool? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -63,7 +63,7 @@ then
 fi
 
 # Arc Theme
-read -p "Install Arc Theme? (y/n) " -n 1 -r
+read -p "Install Arc Theme? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -72,7 +72,7 @@ then
 fi
 
 # Numix Theme
-read -p "Install Numix Theme? (y/n) " -n 1 -r
+read -p "Install Numix Theme? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -81,7 +81,7 @@ then
 fi
 
 # Papirus Icons
-read -p "Install Papirus Icons? (y/n) " -n 1 -r
+read -p "Install Papirus Icons? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -91,7 +91,7 @@ then
 fi
 
 # GParted
-read -p "Install GParted? (y/n) " -n 1 -r
+read -p "Install GParted? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -100,7 +100,7 @@ then
 fi
 
 # Meld
-read -p "Install Meld? (y/n) " -n 1 -r
+read -p "Install Meld? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -109,7 +109,7 @@ then
 fi
 
 # VLC
-read -p "Install VLC? (y/n) " -n 1 -r
+read -p "Install VLC? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -118,7 +118,7 @@ then
 fi
 
 # Ubuntu Restricted Extras
-read -p "Install Ubuntu Restricted Extras? (y/n) " -n 1 -r
+read -p "Install Ubuntu Restricted Extras? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -127,7 +127,7 @@ then
 fi
 
 # Git
-read -p "Install Git? (y/n) " -n 1 -r
+read -p "Install Git? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -138,7 +138,7 @@ then
 fi
 
 # Oracle JDK 8
-read -p "Install Oracle JDK 8? (y/n) " -n 1 -r
+read -p "Install Oracle JDK 8? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -156,7 +156,7 @@ then
 fi
 
 # Sublime Text 3
-read -p "Install Sublime Text 3? (y/n) " -n 1 -r
+read -p "Install Sublime Text 3? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
@@ -173,7 +173,7 @@ then
 fi
 
 # Visual Studio Code
-read -p "Install Visual Studio Code? (y/n) " -n 1 -r
+read -p "Install Visual Studio Code? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
