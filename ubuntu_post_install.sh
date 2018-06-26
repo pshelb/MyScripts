@@ -62,6 +62,15 @@ then
     sudo apt-get -y install gnome-tweak-tool
 fi
 
+# GNOME Shell Extensions
+read -p "Install Shell Extensions? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing GNOME Shell Extensions."
+    sudo apt-get -y install gnome-shell-extensions
+fi
+
 # Arc Theme
 read -p "Install Arc Theme? [Y/n] " -n 1 -r
 echo
