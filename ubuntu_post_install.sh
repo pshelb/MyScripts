@@ -16,6 +16,24 @@ sudo apt-get -y update
 # Upgrade
 read -p "Upgrading current packages.. Press enter to continue."
 sudo apt-get -y upgrade
+ 
+# Google Chrome
+read -p "Install Google Chrome? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Google Chrome."
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    if sudo dpkg -i google-chrome*.deb; then
+        echo 'Google Chrome installed.'
+    else
+        sudo apt-get -y install -f
+        sudo dpkg -i google-chrome*.deb
+        echo 'Google Chrome installed.'
+    fi
+    # Clean up
+    rm -rf google-chrome*.deb
+fi
 
 # GIMP
 read -p "Install GIMP? [Y/n] " -n 1 -r
@@ -34,23 +52,23 @@ then
     echo "Installing Inkscape."
     sudo apt-get -y install inkscape
 fi
- 
-# Google Chrome
-read -p "Install Google Chrome? [Y/n] " -n 1 -r
+
+# VLC
+read -p "Install VLC? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
-    echo "Installing Google Chrome."
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    if sudo dpkg -i google-chrome*.deb; then
-        echo 'Google Chrome installed.'
-    else
-        sudo apt-get -y install -f
-        sudo dpkg -i google-chrome*.deb
-        echo 'Google Chrome installed.'
-    fi
-    # Clean up
-    rm -rf google-chrome*.deb
+    echo "Installing VLC."
+    sudo apt-get -y install vlc
+fi
+
+# Ubuntu Restricted Extras
+read -p "Install Ubuntu Restricted Extras? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Ubuntu Restricted Extras."
+    sudo apt-get -y install ubuntu-restricted-extras
 fi
 
 # GNOME Tweak Tool
@@ -115,24 +133,6 @@ if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing Meld."
     sudo apt-get -y install meld
-fi
-
-# VLC
-read -p "Install VLC? [Y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]];
-then
-    echo "Installing VLC."
-    sudo apt-get -y install vlc
-fi
-
-# Ubuntu Restricted Extras
-read -p "Install Ubuntu Restricted Extras? [Y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]];
-then
-    echo "Installing Ubuntu Restricted Extras."
-    sudo apt-get -y install ubuntu-restricted-extras
 fi
 
 # Git
