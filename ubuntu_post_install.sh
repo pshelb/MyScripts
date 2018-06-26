@@ -16,6 +16,23 @@ sudo apt-get -y update
 # Upgrade
 read -p "Upgrading current packages.. Press enter to continue."
 sudo apt-get -y upgrade
+
+# Open VM Tools
+read -p "Install Open VM Tools? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    read -p "Is this a desktop install (not a headless server)? [Y/n] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]];
+    then
+        echo "Installing Open VM Tools (Desktop)."
+        sudo apt-get -y install open-vm-tools-desktop
+    else
+        echo "Installing Open VM Tools."
+        sudo apt-get -y install open-vm-tools
+    fi
+fi
  
 # Google Chrome
 read -p "Install Google Chrome? [Y/n] " -n 1 -r
@@ -60,6 +77,15 @@ if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing VLC."
     sudo apt-get -y install vlc
+fi
+
+# GParted
+read -p "Install GParted? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing GParted."
+    sudo apt-get -y install gparted
 fi
 
 # Ubuntu Restricted Extras
@@ -115,15 +141,6 @@ then
     echo "Installing Papirus Icons."
     sudo add-apt-repository ppa:papirus/papirus
     sudo apt update && sudo apt-get -y install papirus-icon-theme
-fi
-
-# GParted
-read -p "Install GParted? [Y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]];
-then
-    echo "Installing GParted."
-    sudo apt-get -y install gparted
 fi
 
 # Meld
