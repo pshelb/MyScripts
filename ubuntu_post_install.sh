@@ -199,6 +199,7 @@ then
 fi
 
 # Visual Studio Code
+# See https://code.visualstudio.com/docs/setup/linux
 read -p "Install Visual Studio Code? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]];
