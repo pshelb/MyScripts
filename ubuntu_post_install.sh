@@ -143,6 +143,15 @@ then
     sudo apt update && sudo apt-get -y install papirus-icon-theme
 fi
 
+# htop
+read -p "Install htop? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing htop."
+    sudo apt-get -y install htop
+fi
+
 # Meld
 read -p "Install Meld? [Y/n] " -n 1 -r
 echo
