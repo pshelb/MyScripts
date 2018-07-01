@@ -152,6 +152,15 @@ then
     sudo apt-get -y install htop
 fi
 
+# screenfetch
+read -p "Install screenfetch? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing screenfetch."
+    sudo apt-get -y install screenfetch
+fi
+
 # Meld
 read -p "Install Meld? [Y/n] " -n 1 -r
 echo
