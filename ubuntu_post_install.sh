@@ -124,15 +124,6 @@ then
     sudo apt-get -y install arc-theme
 fi
 
-# Numix Theme
-read -p "Install Numix Theme? [Y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]];
-then
-    echo "Installing Numix Theme."
-    sudo apt-get -y install numix-gtk-theme
-fi
-
 # Papirus Icons
 read -p "Install Papirus Icons? [Y/n] " -n 1 -r
 echo
