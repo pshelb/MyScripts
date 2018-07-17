@@ -95,6 +95,7 @@ if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing Ubuntu Restricted Extras."
     sudo apt-get -y install ubuntu-restricted-extras
+    sudo apt-get remove gstreamer1.0-fluendo-mp3
 fi
 
 # GNOME Tweak Tool
@@ -122,6 +123,17 @@ if [[ $REPLY =~ ^[Yy]$ ]];
 then
     echo "Installing Arc Theme."
     sudo apt-get -y install arc-theme
+fi
+
+# Adapta Theme
+read -p "Install Adapta Theme? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];
+then
+    echo "Installing Adapta Theme."
+    sudo apt-add-repository ppa:tista/adapta -y
+    sudo apt update
+    sudo apt install adapta-gtk-theme
 fi
 
 # Papirus Icons
